@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path'); 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin'); 
 
 const config = {
@@ -69,13 +70,13 @@ const config = {
     contentBase: './dist'
   },
   plugins: [
-    
+    new ReactRefreshPlugin(),
     new HtmlWebpackPlugin({
       appMountId: 'root', 
       template:'public/index.html',
     }),
     new LodashModuleReplacementPlugin,
-  
+    
   ]
 };
 
