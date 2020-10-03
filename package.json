@@ -11,7 +11,8 @@
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
     "start": "webpack-dev-server --hot --mode development",
-    "extract": "formatjs extract 'src/**/*.{js,jsx}' --out-file lang/en.json"
+    "extract": "formatjs extract 'src/**/*.{js,jsx}' --out-file lang/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+    "compile": "formatjs compile"
   },
   "dependencies": {
     "@formatjs/cli": "^2.13.0",
