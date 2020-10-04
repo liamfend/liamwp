@@ -1,28 +1,33 @@
-
-import React from "react";
-import { Button } from 'antd'
+import React from 'react'
+import { Button, DatePicker } from 'antd'
 import { FormattedMessage, useIntl } from 'react-intl'
 
-
-
 const App = () => {
-  const intl = useIntl();
+  const intl = useIntl()
 
-  return <div className="App">
-     translate
-    {
-      intl.formatMessage(
+  return (
+    <div className="App">
+      translate
+      {intl.formatMessage(
         {
           description: 'A message', // Description should be a string literal
-          defaultMessage: 'My name is {name}', // Message should be a string literal
+          defaultMessage: 'My name is {name}' // Message should be a string literal
         },
         {
-          name: 'aaaa',
+          name: 'aaaa dsa '
         } // Values should be an object literal, but not necessarily every value inside
-      )
-    }
-    <Button type="primary">Button a</Button>
-  </div>
+      )}
+      <Button type="primary">Button a</Button>
+      <div>
+        dsafsaf
+        <span>
+          dsafsaf
+          <div>dsafdsa<span>dsafdsaf</span></div>
+        </span>
+      </div>
+      <DatePicker.RangePicker />
+    </div>
+  )
 }
 // class App extends React.Component {
 //   constructor(props){
@@ -52,4 +57,4 @@ const App = () => {
 //   }
 // }
 
-export default App;
+export default App
