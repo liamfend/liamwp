@@ -1,28 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, DatePicker } from 'antd'
 import { FormattedMessage, useIntl } from 'react-intl'
 
 const App = () => {
   const intl = useIntl()
-
+  const data = {
+    isloading: false
+    // payload: {
+    //   student: {
+    //     firstName: 'f',
+    //     lastName: 'l'
+    //   },
+    //   area: {
+    //     name: ''
+    //   }
+    // }
+  }
   return (
-    <div className="App">
-      translate
+    <div className='App'>
+      student name is {data?.payload?.student?.firstName || 'li'}
       {intl.formatMessage(
         {
           description: 'A message', // Description should be a string literal
-          defaultMessage: 'My name is {name}' // Message should be a string literal
+          defaultMessage: 'My name is {name}'
         },
         {
           name: 'aaaa dsa '
         } // Values should be an object literal, but not necessarily every value inside
       )}
-      <Button type="primary">Button a</Button>
+      <Button type='primary'>Button a</Button>
       <div>
         dsafsaf
         <span>
-          dsafsaf
-          <div>dsafdsa<span>dsafdsaf</span></div>
+          sssssssssssssaaaa
+          <div>
+            dsafdsa<span>dsafdsafsf</span>
+          </div>
         </span>
       </div>
       <DatePicker.RangePicker />

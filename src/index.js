@@ -7,22 +7,23 @@ import { ConfigProvider } from 'antd'
 import App from './App'
 import './styles.css'
 
-const loadLocaleData = (type = 'zh') => {
-  if (type == 'en') {
+const loadLocaleData = (type = 'en') => {
+  if (type === 'en') {
     return import('../compiled-lang/en.json')
   }
-  if (type == 'zh') {
+  if (type === 'zh') {
     return import('../compiled-lang/zh.json')
   }
 }
 
 const bootstrapApplication = async (locale) => {
   const messages = await loadLocaleData(locale)
+
   console.log(messages.default)
   ReactDOM.render(
-    <ConfigProvider >
-      <IntlProvider messages={messages} locale="zh" defaultLocale="en">
-        <App name="a" />
+    <ConfigProvider>
+      <IntlProvider messages={messages} locale='zh' defaultLocale='en'>
+        <App name='aaaasss' />
       </IntlProvider>
     </ConfigProvider>,
     document.getElementById('root')

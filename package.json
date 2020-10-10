@@ -13,7 +13,8 @@
     "start": "webpack-dev-server --hot --mode development",
     "extract": "formatjs extract 'src/**/*.{js,jsx}' --out-file lang/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
     "compile": "formatjs compile",
-    "lint:js": "eslint src/*"
+    "lint:css":"stylelint  'src/**/*.{css,scss}'",
+    "lint:js": "eslint 'src/**/*.{js,jsx}'"
   },
   "dependencies": {
     "@formatjs/cli": "^2.13.0",
@@ -31,7 +32,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intl": "^5.8.4",
-    "react-refresh": "^0.8.3"
+    "react-refresh": "^0.8.3",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

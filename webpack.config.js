@@ -1,72 +1,72 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
-const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 
 const config = {
-  entry: ["./src/index.js"],
+  entry: ['./src/index.js'],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: "babel-loader",
-        exclude: /node_modules/,
+        use: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-        exclude: /\.module\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/
       },
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: true,
-            },
-          },
+              modules: true
+            }
+          }
         ],
-        include: /\.module\.css$/,
+        include: /\.module\.css$/
       },
       {
         test: /\.svg$/,
-        use: "file-loader",
+        use: 'file-loader'
       },
       {
         test: /\.png$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
-              mimetype: "image/png",
-            },
-          },
-        ],
-      },
-    ],
+              mimetype: 'image/png'
+            }
+          }
+        ]
+      }
+    ]
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx']
   },
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist'
   },
   plugins: [
     new ReactRefreshPlugin(),
     new HtmlWebpackPlugin({
-      appMountId: "root",
-      template: "public/index.html",
+      appMountId: 'root',
+      template: 'public/index.html'
     }),
-    new LodashModuleReplacementPlugin(),
-  ],
-};
+    new LodashModuleReplacementPlugin()
+  ]
+}
 
-module.exports = config;
+module.exports = config
